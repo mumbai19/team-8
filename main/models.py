@@ -8,7 +8,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Activity(models.Model):
     activity_id = models.AutoField(primary_key=True)
@@ -46,7 +46,9 @@ class Course(models.Model):
 class Evaluate(models.Model):
     student = models.ForeignKey('Student', models.DO_NOTHING)
     mentor = models.ForeignKey('Mentor', models.DO_NOTHING)
-    marks = models.IntegerField()
+    assessment_name = models.CharField(max_length=255)
+    assesment_month = models.CharField(max_length=255)
+    assessment_level = models.CharField(max_length=255)
 
     class Meta:
         managed = False
@@ -55,18 +57,12 @@ class Evaluate(models.Model):
 
 
 class Mentor(models.Model):
-    mentor_id = models.AutoField(primary_key=True)
-    mentor_name = models.CharField(max_length=255, blank=True, null=True)
-    username = models.CharField(max_length=255, blank=True, null=True)
-    password = models.CharField(max_length=255)
+    user = models.OneToOneField(User)
     course = models.ForeignKey(Course, models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'mentor'
-
-    def __str__(self):
-        return (str(self.mentor_id) + " " + self.mentor_name)
 
 
 class Saving(models.Model):
