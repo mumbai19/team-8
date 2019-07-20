@@ -35,6 +35,7 @@
          </table>
       </div>
       <br><br><br><br>
+      <span style="background-color:blue">Marks</span>
       <div class="container">
                   <table border="2" cellpadding="10px">
                       <tr>
@@ -51,7 +52,31 @@
                       </tr>       
           
                    </table>
-                </div>
+      </div>
+      <br><br><br><br>
+      <div class="container">
+                  <table border="2" cellpadding="10px">
+                        <tr>
+                              <th>Date</th>
+                              <th>Eval1</th>
+                              <th>Eval2</th>
+                              <th>Eval3</th>
+                        </tr> 
+                        <tr bgcolor="cyan">
+                              <td>22/7/19</td>
+                              <td>2*</td>
+                              <td>0*</td>
+                              <td>1*</td>
+                        </tr>
+                              <tr bgcolor="violet">
+                                    <td>25/7/19</td>
+                                    <td>3*</td>
+                                    <td></td>
+                                    <td>2*</td>
+                              </tr>       
+            
+                  </table>
+      </div>
         <script type="text/javascript" language="javascript ">
 
             
@@ -96,7 +121,11 @@
                                 
                    } },
                    tooltip: {visible: true}
-	         }],
+               }],
+               legend: {
+                  //Enable chart legend
+                  visible: true
+             },
            // ...
     });
       </script>
