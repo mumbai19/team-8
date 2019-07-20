@@ -47,33 +47,40 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr id="studentDetails">
+                          <tr class="studentDetails">
                             <th scope="row">1</th>
                             <td id="studentName">Mark</td>
                             <td id="studentAddress">Otto</td>
-                            <td id="studentPhone">@mdo</td>
-                            <td >@mdo</td>
+                            <td id="studentAge">6</td>
+                            <td id="studentCourse">Beginner</td>
+                            <td id="studentParent">Delaney</td>
+                            <td id="studentPhone">0123456789</td>
                 
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@mdo</td>
-                         
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>sdfksdofkapfkaspfkapsfksapokfaspfk</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                          </tr>
+                          <tr class="studentDetails">
+                                <th scope="row">1</th>
+                                <td id="studentName">Jax</td>
+                                <td id="studentAddress">Otto</td>
+                                <td id="studentAge">6</td>
+                                <td id="studentCourse">Beginner</td>
+                                <td id="studentParent">Delaney</td>
+                                <td id="studentPhone">0123456789</td>
+                    
+                              </tr>
+                              <tr class="studentDetails">
+                                    <th scope="row">1</th>
+                                    <td id="studentName">Tony</td>
+                                    <td id="studentAddress">Otto</td>
+                                    <td id="studentAge">6</td>
+                                    <td id="studentCourse">Beginner</td>
+                                    <td id="studentParent">Delaney</td>
+                                    <td id="studentPhone">0123456789</td>
+                        
+                                  </tr>
                         </tbody>
                       </table>
                       <div class="row">
-                          <div class="col-md-6">
+                          <div class="col-md-6" id="updateForm" style="display: none;">
                                 <form action="" method="post">
                                         <div class="form-group">
                                             <label >Name</label>
@@ -92,7 +99,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label >Phone Number</label>
-                                            <input type="tel" pattern=[0-9]{10} class="form-control" id="number" 
+                                            <input type="tel" pattern=[0-9]{10} class="form-control" id="phone" 
                                              placeholder="Enter phone number" required>
                                         </div>
                                         <div class="form-group">
@@ -101,6 +108,11 @@
                                                  placeholder="Enter age" required>
                                         </div>
                                         <div class="form-group">
+                                                <label >Course Name</label>
+                                                <input type="text" class="form-control" id="course" 
+                                                 placeholder="Enter course" required>
+                                        </div>
+                                        <!-- <div class="form-group">
                                                 <label >Course</label>
                                                 <div class="form-check">
                                                         <label class="form-check-label">
@@ -114,27 +126,41 @@
                                                             id="beginner1" value="option1"> Beginner1
                                                         </label>
                                                 </div>
-                                        </div>
+                                        </div> -->
                                         
                                           <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
                           </div>
-                          <script>
-                                $("#studentDetails").click(function(){
-                                    $("#updateForm").show();
-                                })
-                            </script>
-                          <div class="col-md-6" id="updateForm" style="display: none;">
+                         <script>
+                             $(".studentDetails").click(function(){
+                                 $("#updateForm").show();
+                                 var name = document.getElementById("studentName").innerHTML;
+                                 var address = document.getElementById("studentAddress").innerHTML;
+                                 var age = document.getElementById("studentAge").innerHTML;
+                                 var course = document.getElementById("studentCourse").innerHTML;
+                                 var parent = document.getElementById("studentParent").innerHTML;
+                                 var phone = document.getElementById("studentPhone").innerHTML;
+                                 document.getElementById("name").value=name;
+                                 document.getElementById("address").value=address;
+                                 document.getElementById("age").value=age;
+                                 document.getElementById("course").value=course;
+                                 document.getElementById("parent").value=parent;
+                                 document.getElementById("phone").value=phone;
+                                 
+                             })
+                         </script>
+                        
+                          <!-- <div class="col-md-6" id="updateForm" style="display: none;">
                                 <form action="" method="post">
                                         <div class="form-group">
                                                 <label >Name</label>
-                                                
-                                                <input type="text" class="form-control" id="name" 
+                                                <input type="text" class="form-control" id="nameUpdate" 
                                                  value="" required>
                                         </div>
+                                       
                                         
                                 </form>
-                          </div>
+                          </div> -->
                       </div>
                    
                 </div>
