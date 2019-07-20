@@ -61,7 +61,9 @@ CREATE TABLE `Stars` (
 CREATE TABLE `Evaluate` (
 	`student_id` INT NOT NULL,
 	`mentor_id` INT NOT NULL,
-	`marks` INT NOT NULL,
+	`assessment_name` varchar(255) NOT NULL,
+	`assesment_month` varchar(255) NOT NULL,
+	`assessment_level` varchar(255) NOT NULL,
 	PRIMARY KEY (`student_id`,`mentor_id`)
 );
 
@@ -70,8 +72,6 @@ ALTER TABLE `Student` ADD CONSTRAINT `Student_fk0` FOREIGN KEY (`mentor_id`) REF
 ALTER TABLE `Mentor` ADD CONSTRAINT `Mentor_fk0` FOREIGN KEY (`course_id`) REFERENCES `Course`(`course_id`);
 
 ALTER TABLE `Saving` ADD CONSTRAINT `Saving_fk0` FOREIGN KEY (`student_id`) REFERENCES `Student`(`student_id`);
-
-ALTER TABLE `Course` ADD CONSTRAINT `Course_fk0` FOREIGN KEY (`course_name`) REFERENCES `Student`(`student_id`);
 
 ALTER TABLE `Activity` ADD CONSTRAINT `Activity_fk0` FOREIGN KEY (`mentor_id`) REFERENCES `Mentor`(`mentor_id`);
 
