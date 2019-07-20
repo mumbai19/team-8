@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    {% load staticfiles %}
+    {% load static %}
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="./assets/img/apple-icon.png">
     <link rel="icon" href="./assets/img/favicon.png">
@@ -47,8 +47,8 @@
     <link rel="stylesheet" href="{% static 'css/material-kit.min.css?v=2.0.3' %}">
     <!-- Documentation extras -->
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="./assets/assets-for-demo/demo.css" rel="stylesheet" />
-    <link href="./assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
+    <link href="{% static 'assets-for-demo/demo.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets-for-demo/vertical-nav.css' %}" rel="stylesheet" />
     <!-- iframe removal -->
     <script type="text/javascript">
         if (document.readyState === 'complete') {
@@ -179,7 +179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </nav>
-    <div class="page-header header-filter clear-filter" data-parallax="true" style="background-image: url('assets/img/bg0.jpg');">
+    <div class="page-header header-filter clear-filter" data-parallax="true" style="background-image: url({% static 'img/bg0.jpg' %});">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
@@ -4466,32 +4466,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
     <!--   Core JS Files   -->
-    <script src="./assets/js/core/jquery.min.js"></script>
-    <script src="./assets/js/core/popper.min.js"></script>
-    <script src="./assets/js/bootstrap-material-design.min.js"></script>
+    <script src="{% static 'js/core/jquery.min.js' %}"></script>
+    <script src="{% static 'js/core/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-material-design.min.js' %}"></script>
     <!--  Google Maps Plugin  -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Yno10-YTnLjjn_Vtk0V8cdcY5lC4plU"></script>
     <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
-    <script src="./assets/js/plugins/moment.min.js"></script>
+    <script src="{% static 'js/plugins/moment.min.js' %}"></script>
     <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-    <script src="./assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <script src="{% static 'js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
     <!--	Plugin for the Sliders, full documentation here: https://refreshless.com/nouislider/ -->
-    <script src="./assets/js/plugins/nouislider.min.js"></script>
+    <script src="{% static 'js/plugins/nouislider.min.js' %}' %}"></script>
     <!--	Plugin for Select, full documentation here: https://silviomoreto.github.io/bootstrap-select -->
-    <script src="./assets/js/plugins/bootstrap-selectpicker.js"></script>
+    <script src="{% static 'js/plugins/bootstrap-selectpicker.js' %}"></script>
     <!--	Plugin for Tags, full documentation here: https://xoxco.com/projects/code/tagsinput/  -->
-    <script src="./assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <script src="{% static 'js/plugins/bootstrap-tagsinput.js' %}"></script>
     <!--	Plugin for Fileupload, full documentation here: https://www.jasny.net/bootstrap/javascript/#fileinput -->
-    <script src="./assets/js/plugins/jasny-bootstrap.min.js"></script>
+    <script src="{% static 'js/plugins/jasny-bootstrap.min.js' %}"></script>
     <!--	Plugin for Small Gallery in Product Page -->
-    <script src="./assets/js/plugins/jquery.flexisel.js"></script>
+    <script src="{% static 'js/plugins/jquery.flexisel.js' %}"></script>
     <!-- Plugins for presentation and navigation  -->
-    <script src="./assets/assets-for-demo/js/modernizr.js"></script>
-    <script src="./assets/assets-for-demo/js/vertical-nav.js"></script>
+    <script src="{% static 'assets-for-demo/js/modernizr.js' %}"></script>
+    <script src="{% static 'assets-for-demo/js/vertical-nav.js' %}"></script>
     <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
-    <script src="./assets/js/material-kit.min.js?v=2.0.3"></script>
+    <script src="{% static 'js/material-kit.min.js?v=2.0.3' %}"></script>
     <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
-    <script src="./assets/assets-for-demo/js/material-kit-demo.js"></script>
+    <script src="{% static 'assets-for-demo/js/material-kit-demo.js' %}"></script>
     <script>
         $(document).ready(function() {
 
@@ -4503,7 +4503,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
     </script>
     <!-- Sharrre libray -->
-    <script src="./assets/assets-for-demo/js/jquery.sharrre.js">
+    <script src="{% static 'assets-for-demo/js/jquery.sharrre.js' %}">
     </script>
     <script>
         $(document).ready(function() {

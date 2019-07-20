@@ -8,7 +8,7 @@ def mentorDetails(request):
     context = {
         'mentors': mentors
     }
-    return render(request, 'main/.html', context)
+    return render(request, 'main/index.html', context)
 
 # get student details
 def studentDetails(request):
@@ -32,5 +32,3 @@ def login_user(request):
         else:
             return render(request, 'main/.html', {'error_message': 'Invalid login'})
     return render(request, 'main/.html')
-
-
