@@ -3,6 +3,14 @@ from .models import Mentor, Student, Attendance, Evaluate
 from django.contrib.auth.models import User
 # Create your views here.
 
+# get index page
+def index(request):
+    return render(request, 'main/base_visitor.html')
+
+# get index page
+def dashboard(request):
+    return render(request, 'main/dashboard.html')
+
 # get mentor details
 def mentorDetails(request):
     mentors = Mentor.objects.all()
@@ -17,7 +25,7 @@ def studentDetails(request):
     context = {
         'students': students
     }
-    return render(request, 'main/.html', context)
+    return render(request, 'main/studentDetails.html', context)
 
 def login_user(request):
     if request.method == "POST":
@@ -54,7 +62,7 @@ def getAttendance(request, student_id):
     }
     return render(request, 'main/.html', context)
 
-def getassessments(request, student_id):
+def getAssessments(request, student_id):
     assessments = Evaluate.objects.get(student_id=student_id)
     context = {
         'assessments': assessments

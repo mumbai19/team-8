@@ -1,6 +1,5 @@
-<?php
-session_start();  
-?>
+{% extends 'main/base_visitor.html'%}
+
 <!DOCTYPE html>
 <html>
 <head>
