@@ -1,0 +1,46 @@
+{% extends 'main/base.html'%}
+
+{% block body %}
+{% load static %}
+<div class="main main-raised">
+        <div class="section section-basic">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                            <form action="" method="post">
+                                    <div class="form-group bmd-form-group">
+                                            <label for="name" class="bmd-label-floating">Name</label>
+                                            <input type="text" class="form-control" id="name" name="student_name">
+                                    </div>
+                                    <div class="form-group bmd-form-group">
+                                            <label for="parentsname" class="bmd-label-floating">Parent's Name</label>
+                                            <input type="text" class="form-control" id="parentsname" name="parent_name">
+                                    </div>
+                                    <div class="form-group bmd-form-group">
+                                            <label for="phone" class="bmd-label-floating">Phone</label>
+                                            <input type="number" class="form-control" id="phone" name="phone_no">
+                                    </div>
+                                    <div class="form-group bmd-form-group">
+                                            <label for="standard" class="bmd-label-floating">Standard</label>
+                                            <input type="text" class="form-control" id="standard" name="standard">
+                                    </div>
+                                    <div class="form-group bmd-form-group">
+                                            <label for="address" class="bmd-label-floating">Address</label>
+                                            <input type="text" class="form-control" id="address" name="address">
+                                    </div>
+                                    <div class="form-group bmd-form-group">
+                                            <label for="mentor" class="bmd-label-floating">Mentor</label>
+                                            <input type="text" class="form-control" id="mentor" name="mentor">
+                                    </div>
+                                    <input type="button" value="Update and Save" class="btn btn-primary btn-round" onclick="document.location.href='{% url 'main:students' %}';">
+                            </form>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+</div>
+
+
+
+{% endblock %}
