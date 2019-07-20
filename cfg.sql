@@ -71,8 +71,6 @@ ALTER TABLE `Mentor` ADD CONSTRAINT `Mentor_fk0` FOREIGN KEY (`course_id`) REFER
 
 ALTER TABLE `Saving` ADD CONSTRAINT `Saving_fk0` FOREIGN KEY (`student_id`) REFERENCES `Student`(`student_id`);
 
-ALTER TABLE `Course` ADD CONSTRAINT `Course_fk0` FOREIGN KEY (`course_name`) REFERENCES `Student`(`student_id`);
-
 ALTER TABLE `Activity` ADD CONSTRAINT `Activity_fk0` FOREIGN KEY (`mentor_id`) REFERENCES `Mentor`(`mentor_id`);
 
 ALTER TABLE `Attendance` ADD CONSTRAINT `Attendance_fk0` FOREIGN KEY (`student_id`) REFERENCES `Student`(`student_id`);
