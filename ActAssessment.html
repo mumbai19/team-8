@@ -38,7 +38,10 @@
 			<div class="container">
 				<div class="nav-header">
 	 				<p class="navbar-left">Date: <input type="text" id="datepicker"></p>
-	 				<button class="btn btn-success navbar-right" onclick="addField()">Add Row</button>
+	 				<!-- <button class="btn btn-success" onclick="addField()">Add Row</button>
+	 				<button class="btn btn-success navbar-right" style="margin-right: : 20px;">Submit</button> -->
+	 				<button class="btn btn-success navbar-btn navbar-right" style="margin-right: 15px" data-toggle="modal" data-target="#registerModal">Submit</button>
+					<button class="btn btn-warning navbar-btn navbar-right" data-toggle="modal" data-target="#loginModal" style="margin-right: 15px;margin-left: 15px" onclick="addField()">Add Row</button>
 				</div>						
 			</div>
 		</nav>			
@@ -69,14 +72,6 @@
 		</div>
 
 		<script type="text/javascript">
-			
-			// $("button").click(function(){
-			// 	var c = document.getElementById("myBody").length;
-			// 	alert(c);
-			// 	c-=2;
-			// 	$("#"+c).after("<tr id="+c+"><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>");
-			// 	c++;
-			// });
 
 			function addField() {
 		        var myTable = document.getElementById("myTable");
