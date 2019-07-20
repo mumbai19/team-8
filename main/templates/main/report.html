@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--  jquery script  -->
+    <script src="https://cdn.syncfusion.com/js/assets/external/jquery-1.10.2.min.js"></script>
+    <!-- Essential JS UI widget -->
+    <script src="https://cdn.syncfusion.com/17.2.0.28/js/web/ej.web.all.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+        <div id="container" style="width: 820px; height: 500px;"></div>
+        <div class="container">
+        <table border="2" cellpadding="10px">
+            <tr>
+                  <th>Subject</th>
+                  <th>Marks</th>
+            </tr> 
+            <tr bgcolor="cyan">
+                  <td>History</td>
+                  <td>18</td>
+            </tr>  
+            <tr bgcolor="yellow">
+                        <td>English</td>
+                        <td>19</td>
+            </tr>
+            <tr bgcolor="violet">
+                        <td>Geometry</td>
+                        <td>20</td>
+            </tr>
+            <tr bgcolor="pink">
+                        <td>Science</td>
+                        <td>15</td>
+            </tr>       
+
+         </table>
+      </div>
+      <br><br><br><br>
+      <div class="container">
+                  <table border="2" cellpadding="10px">
+                      <tr>
+                            <th>Date</th>
+                            <th>Subject1</th>
+                            <th>Subject1</th>
+                            <th>Subject1</th>
+                      </tr> 
+                      <tr bgcolor="cyan">
+                            <td>History</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                      </tr>       
+          
+                   </table>
+                </div>
+        <script type="text/javascript" language="javascript ">
+
+            
+
+            var chartData = [
+      { month: 'Jan', sales: 35 },
+      { month: 'Feb', sales: 28 },
+      { month: 'Mar', sales: 34 },
+      { month: 'Apr', sales: 32 },
+      { month: 'May', sales: 40 },
+      { month: 'Jun', sales: 32 },
+      { month: 'Jul', sales: 35 },
+      { month: 'Aug', sales: 55 },
+      { month: 'Sep', sales: 38 },
+      { month: 'Oct', sales: 30 },
+      { month: 'Nov', sales: 25 },
+      { month: 'Dec', sales: 32 }];
+
+      $("#container").ejChart({
+            // ...     
+            title: {
+                  //Add chart title
+                text: 'Attendance of Student per Month'			
+               }, 
+
+               primaryYAxis:{
+                  //Customize the axis label format.
+                  labelFormat: '{value}%'
+              },
+            series: [{
+                   // ...
+                   type: 'line',
+		           //Set datasource, xName and yName 
+                   dataSource: chartData, 
+                   xName: "month", 
+                   yName: "sales",
+                   name: "Month",
+                   marker: {
+                         dataLabel: {
+                                //Enable data label in the chart 
+                                visible: true,
+                                
+                   } },
+                   tooltip: {visible: true}
+	         }],
+           // ...
+    });
+      </script>
+</body>
+</html>
