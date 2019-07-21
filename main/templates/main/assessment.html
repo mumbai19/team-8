@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="assessment.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    var a='pritam';
+    var c ='<input type="checkbox" name="property" >'
+    var b ="<table border='1' bgcolor='#ffff1'><tr><th>"+a+"</th><th>"+c+"</th><th>"+c+"</th><th>"+c+"</th></tr></table>"
+  $("#btn1").click(function(){
+    $("#container").append(b+'<br>');
+  });
+  $("#btn2").click(function(){
+    $("#container").append(b+'<br>');
+  });
+  $("#btn3").click(function(){
+    $("#container").append(b+'<br>');
+  });
+});</script>
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a id="btn1" href="#">Link 1</a>
+          <a id="btn2" href="#">Link 2</a>
+          <a id="btn3" href="#">Link 3</a>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br>
+      <div id="container"></div>
+</body>
+</html>

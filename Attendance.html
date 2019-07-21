@@ -1,47 +1,27 @@
-{% extends 'main/base.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attendance</title>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	
+<!-- 	This link is for accessing Bootstrap Features
+ -->	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-{% block body %}
-{% load static %}
+	<style type="text/css">
+		.ui-datepicker , .ui-widget-content{
+  			background: #eeeeee none;
+		}
+	</style>
+</head>
+<body>
+<!-- 	This is the JQuery Dependency
+ -->	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	
+<!-- 	This is the script for Bootstrap
+ -->	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<<<<<<< HEAD
-
-<div class="main main-raised">
-    <div class="section section-basic">
-        <div class="container">
-                <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-																		<th>Date</th>
-																		<th>Name</th>
-																		<th>Present/Absent</th>
-																		<th>Savings</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    {% for i in attendance %}
-                                    <tr class="studentDetails">
-                                      <th scope="row">{{i.student_id}}</th>
-																			<td id="studentName1">{{i.attendance_date}}</td>
-																			<td id="studentName1">{{i.name}}</td>
-																			<td id="studentAddress1">{{i.present}}</td>
-																			<td id="studentAddress1">{{i.savings}}</td>
-                                    </tr>
-                                    {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                        </tbody>
-                      </table>
-                   
-                </div>
-    </div>
-</div>
-</div>
-</div>
-{% endblock %}
-=======
 	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script>
@@ -119,4 +99,3 @@
 	
 </html>
 
->>>>>>> 0ba27a104efa0140c5ea90bcf31c13879689bea1
