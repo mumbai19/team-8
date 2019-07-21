@@ -2,210 +2,46 @@
 
 {% block body %}
 {% load static %}
+
+
 <div class="main main-raised">
     <div class="section section-basic">
         <div class="container">
-    <div class="stud-container container-fluid">
-            <div class="details">
-                <!-- <table class="table table-hover">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Course</th>
-                            <th scope="col">Parent</th>
-                            <th scope="col">Phone</th>
-                          </tr>
-                        </thead>
-                         <tbody>
-                            {% if stud %}
-                                {% for i in stud %}
-                                    <tr id="studentDetails_{{ forloop.counter }}">
-                                    <th scope="row">{{ i.student_id }}</th>
-                                    <td id="studentName">{{ i.student_name }}</td>
-                                    <td id="studentAddress">{{ i.address }}</td>
-                                    <td id="studentCourse">Beginner</td>
-                                    <td id="studentParent">{{ i.parent_name }}</td>
-                                    <td id="studentPhone">{{ i.phone_no }}</td>
-                                    <button id="update" class="btn btn-primary">Update</button>
-                                  </tr>
-                                {% endfor %}
-                            {% endif %}
-                        </tbody> --> 
-                 <!--   {% for i in list %}
-                        <tr class="studentDetails">
-                            <th scope="row">1</th>
-                            <td id="studentName">Mark</td>
-                            <td id="studentAddress">Otto</td>
-                            <td id="studentAge">6</td>
-                            <td id="studentCourse">Beginner</td>
-                            <td id="studentParent">Delaney</td>
-                            <td id="studentPhone">0123456789</td>
-
-                          </tr>
-                        {% endfor %}
-                      </table>-->
-
-
-                    <table class="table table-hover">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Course</th>
-                            <th scope="col">Parent</th>
-                            <th scope="col">Phone</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="studentDetails">
-                            <th scope="row">1</th>
-                            <td id="studentName1">{{context}}</td>
-                            <td id="studentAddress1">Otto</td>
-                            <td id="studentAge1">6</td>
-                            <td id="studentCourse1">Beginner</td>
-                            <td id="studentParent1">Delaney</td>
-                            <td id="studentPhone1">0123456789</td>
-                            <td> <button class="update" class="btn btn-primary" value="1" onclick="newUpdate(this.value)">Update</button></td>
-                            
-                          </tr>
-                          <tr class="studentDetails2">
-                                <th scope="row">1</th>
-                                <td id="studentName2">Jax</td>
-                                <td id="studentAddress2">Otto</td>
-                                <td id="studentAge2">6</td>
-                                <td id="studentCourse2">Beginner</td>
-                                <td id="studentParent2">Delaney</td>
-                                <td id="studentPhone2">0123456789</td>
-                                <td> <button class="update" class="btn btn-primary" value="2" onclick="newUpdate(this.value)">Update</button></td>
-                                
-                              </tr>
-                              <tr class="studentDetails3">
-                                    <th scope="row">1</th>
-                                    <td id="studentName3">Tony</td>
-                                    <td id="studentAddress3">Otto</td>
-                                    <td id="studentAge3">6</td>
-                                    <td id="studentCourse3">Beginner</td>
-                                    <td id="studentParent3">Delaney</td>
-                                    <td id="studentPhone3">0123456789</td>
-                                    <td> <button class="update" class="btn btn-primary" value="3" onclick="newUpdate(this.value)">Update</button></td>
-                                  </tr>
+                <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Course</th>
+                                    <th>Parent</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    {% for i in students %}
+                                    <tr class="studentDetails">
+                                      <th scope="row">{{i.student_id}}</th>
+                                      <td id="studentName1">{{i.student_name}}</td>
+                                      <td id="studentAddress1">{{i.address}}</td>
+                                      <td id="studentAge1">English</td>
+                                      <td id="studentCourse1">{{i.parent_name}}</td>
+                                      <td id="studentParent1">{{i.phone_no}}</td>
+                                    </tr>
+                                    {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                         </tbody>
                       </table>
-                      <div class="row">
-                          <div class="col-md-6" id="updateForm" style="display: none;">
-                                <form action="" method="post">
-                                        <div class="form-group">
-                                            <label >Name</label>
-                                            <input type="text" class="form-control" id="name" name=""
-                                             placeholder="Enter name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label >Address</label>
-                                            <input type="text" class="form-control" id="address"
-                                             placeholder="Enter address" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label >Parent's Name</label>
-                                            <input type="text" class="form-control" id="parent"
-                                             placeholder="Enter parent's name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label >Phone Number</label>
-                                            <input type="tel" pattern=[0-9]{10} class="form-control" id="phone"
-                                             placeholder="Enter phone number" required>
-                                        </div>
-                                        <div class="form-group">
-                                                <label >Age</label>
-                                                <input type="number" class="form-control" id="age"
-                                                 placeholder="Enter age" required>
-                                        </div>
-                                        <div class="form-group">
-                                                <label >Course Name</label>
-                                                <input type="text" class="form-control" id="course"
-                                                 placeholder="Enter course" required>
-                                        </div>
-                                        <!-- <div class="form-group">
-                                                <label >Course</label>
-                                                <div class="form-check">
-                                                        <label class="form-check-label">
-                                                             <input class="form-check-input" type="radio" name="beginner"
-                                                            id="beginner" value="option"> Beginner
-                                                        </label>
-                                                </div>
-                                                <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio" name="beginner1"
-                                                            id="beginner1" value="option1"> Beginner1
-                                                        </label>
-                                                </div>
-                                        </div> -->
-
-                                          <button type="submit" class="btn btn-primary">Submit</button>
-                                    </form>
-                          </div>
-                         <!-- <script>
-                             $(".update").click(function(){
-                                 $("#updateForm").show();
-                                 var name = document.getElementById("studentName").innerHTML;
-                                 var address = document.getElementById("studentAddress").innerHTML;
-                                 var age = document.getElementById("studentAge").innerHTML;
-                                 var course = document.getElementById("studentCourse").innerHTML;
-                                 var parent = document.getElementById("studentParent").innerHTML;
-                                 var phone = document.getElementById("studentPhone").innerHTML;
-                                 document.getElementById("name").value=name;
-                                 document.getElementById("address").value=address;
-                                 document.getElementById("age").value=age;
-                                 document.getElementById("course").value=course;
-                                 document.getElementById("parent").value=parent;
-                                 document.getElementById("phone").value=phone;
-
-                             })
-                         </script> -->
-                         <script>
-                             function newUpdate(val){
-                                var temp =val;
-                                var studentName="studentName"+val;
-                                var studentAddress="studentAddress"+val;
-                                var studentAge="studentAge"+val;
-                                var studentCourse="studentCourse"+val;
-                                var studentParent="studentParent"+val;
-                                var studentPhone="studentPhone"+val;
-                                $("#updateForm").show();
-                                var name = document.getElementById(studentName).innerHTML;
-                                var address = document.getElementById(studentAddress).innerHTML;
-                                var age = document.getElementById(studentAge).innerHTML;
-                                var course = document.getElementById(studentCourse).innerHTML;
-                                var parent = document.getElementById(studentParent).innerHTML;
-                                var phone = document.getElementById(studentPhone).innerHTML;
-                                document.getElementById("name").value=name;
-                                document.getElementById("address").value=address;
-                                document.getElementById("age").value=age;
-                                document.getElementById("course").value=course;
-                                document.getElementById("parent").value=parent;
-                                document.getElementById("phone").value=phone;
-                             }
-                         </script>
-
-                          <!-- <div class="col-md-6" id="updateForm" style="display: none;">
-                                <form action="" method="post">
-                                        <div class="form-group">
-                                                <label >Name</label>
-                                                <input type="text" class="form-control" id="nameUpdate"
-                                                 value="" required>
-                                        </div>
-
-
-                                </form>
-                          </div> -->
-                      </div>
                    
                 </div>
     </div>
+    <div style="text-align: center"> 
+        <input type="button" value="Update" class="btn btn-primary btn-round" onclick="document.location.href='{% url 'main:studentsform' %}';">
+
+    </div></button></div>
 </div>
 </div>
 </div>

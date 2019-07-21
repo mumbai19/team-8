@@ -22,10 +22,7 @@ def mentorDetails(request):
 # get student details
 def studentDetails(request):
     students = Student.objects.all()
-    context = {
-        'students': students
-    }
-    return render(request, 'main/studentDetails.html', context)
+    return render(request, 'main/studentDetails.html', {'students': students})
 
 def login_user(request):
     if request.method == "POST":
@@ -57,10 +54,7 @@ def register(request):
 
 def getAttendance(request, student_id):
     attendance = Attendance.objects.get(student_id=student_id)
-    context = {
-        'attendance': attendance
-    }
-    return render(request, 'main/.html', context)
+    return render(request, 'main/Attendance.html', attendance)
 
 def getAssessments(request, student_id):
     assessments = Evaluate.objects.get(student_id=student_id)
@@ -82,3 +76,5 @@ def updateStudentInfo(request, student_id):
         return render(request, 'main/.html')
     return render(request, 'main/.html')
 
+def updateform(request):
+    return render(request, 'main/studentUpdate.html')
