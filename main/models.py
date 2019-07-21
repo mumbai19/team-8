@@ -157,7 +157,7 @@ class Evaluate(models.Model):
     student = models.ForeignKey('Student', models.DO_NOTHING)
     mentor = models.ForeignKey('Mentor', models.DO_NOTHING)
     assessment_name = models.CharField(max_length=255)
-    assesment_month = models.CharField(max_length=255)
+    assesment_date = models.CharField(max_length=255)
     assessment_level = models.CharField(max_length=255)
 
     class Meta:

@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <title>Student Details</title>
-</head> 
-<body>
+{% extends 'main/base.html'%}
+
+{% block body %}
+{% load static %}
+<div class="main main-raised">
+    <div class="section section-basic">
+        <div class="container">
     <div class="stud-container container-fluid">
             <div class="details">
-                <table class="table table-hover">
+                <!-- <table class="table table-hover">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">#</th>
@@ -27,19 +21,18 @@
                          <tbody>
                             {% if stud %}
                                 {% for i in stud %}
-                                    <tr id="studentDetails{{ forloop.counter }}">
+                                    <tr id="studentDetails_{{ forloop.counter }}">
                                     <th scope="row">{{ i.student_id }}</th>
-                                    <td id="studentName{{ forloop.counter }}">{{ i.student_name }}</td>
-                                    <td id="studentAddress{{ forloop.counter }}">{{ i.address }}</td>
-                                    <td id="studentCourse{{ forloop.counter }}">Beginner</td>
-                                    <td id="studentParent{{ forloop.counter }}">{{ i.parent_name }}</td>
-                                    <td id="studentPhone{{ forloop.counter }}">{{ i.phone_no }}</td>
-                                    <td><button id="update" class="btn btn-primary" value="1" onclick="newUpdate(this.value)">Update</button></td>
-                                    
+                                    <td id="studentName">{{ i.student_name }}</td>
+                                    <td id="studentAddress">{{ i.address }}</td>
+                                    <td id="studentCourse">Beginner</td>
+                                    <td id="studentParent">{{ i.parent_name }}</td>
+                                    <td id="studentPhone">{{ i.phone_no }}</td>
+                                    <button id="update" class="btn btn-primary">Update</button>
                                   </tr>
                                 {% endfor %}
                             {% endif %}
-                        </tbody> 
+                        </tbody> --> 
                  <!--   {% for i in list %}
                         <tr class="studentDetails">
                             <th scope="row">1</th>
@@ -54,8 +47,8 @@
                         {% endfor %}
                       </table>-->
 
-                    <!--
-                        <table class="table table-hover">
+
+                    <table class="table table-hover">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">#</th>
@@ -71,7 +64,7 @@
                         <tbody>
                           <tr class="studentDetails">
                             <th scope="row">1</th>
-                            <td id="studentName1">Mark</td>
+                            <td id="studentName1">{{context}}</td>
                             <td id="studentAddress1">Otto</td>
                             <td id="studentAge1">6</td>
                             <td id="studentCourse1">Beginner</td>
@@ -103,14 +96,12 @@
                                   </tr>
                         </tbody>
                       </table>
-                    -->
-                    
                       <div class="row">
                           <div class="col-md-6" id="updateForm" style="display: none;">
                                 <form action="" method="post">
                                         <div class="form-group">
                                             <label >Name</label>
-                                            <input type="text" class="form-control" id="name"
+                                            <input type="text" class="form-control" id="name" name=""
                                              placeholder="Enter name" required>
                                         </div>
                                         <div class="form-group">
@@ -142,7 +133,7 @@
                                                 <label >Course</label>
                                                 <div class="form-check">
                                                         <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio" name="beginner"
+                                                             <input class="form-check-input" type="radio" name="beginner"
                                                             id="beginner" value="option"> Beginner
                                                         </label>
                                                 </div>
@@ -215,7 +206,7 @@
                    
                 </div>
     </div>
-    
-
-</body>
-</html>
+</div>
+</div>
+</div>
+{% endblock %}

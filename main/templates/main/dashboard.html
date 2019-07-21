@@ -1,0 +1,43 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block body %}
+    <div class="main main-raised">
+        <div class="section section-basic">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-background" style="background-image: url({% static 'img/examples/card-blog5.jpg'%})">
+                <div class="card-body">
+                    <a href="{% url 'main:students' %}">
+                        <h3 class="card-title">Student Details</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-background" style="background-image: url({% static 'img/examples/card-blog5.jpg'%})">
+                <div class="card-body">
+                    <a href="{% url 'main:attendance' %}">
+                        <h3 class="card-title">Attendance</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-background" style="background-image: url({% static 'img/examples/card-blog5.jpg'%})">
+                <div class="card-body">
+                    <a href="{% url 'main:assessments' %}">
+                        <h3 class="card-title">Assessment</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
+
+
+<!-- <img src="http://www.touchonelife.org/wp-content/uploads/2019/04/tl-logo.jpg" alt="Arctica" title="Arctica"> -->
