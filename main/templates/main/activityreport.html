@@ -1,0 +1,46 @@
+{% extends 'main/base.html'%}
+
+{% block body %}
+{% load static %}
+
+
+<div class="main main-raised">
+    <div class="section section-basic">
+        <div class="container">
+                <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Mentor</th>
+                                    <th>Activity</th>
+                                    <th>Theme</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    {% for i in activities %}
+                                    <tr class="activityDetaild">
+                                      <th scope="row">{{i.activity_id}}</th>
+                                      <td id="mentorId">{{i.name}}</td>
+                                      <td id="activityName">{{i.activity_name}}</td>
+                                      <td id="theme1">{{i.theme}}</td>
+                                      <td id="activityDescription">{{i.activity_description}}</td>
+                                    </tr>
+                                    {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                        </tbody>
+                      </table>
+                   
+                </div>
+    </div>
+    <div style="text-align: center"> 
+        <input type="button" value="Add" class="btn btn-primary btn-round" onclick="document.location.href='{% url 'main:addactivity' %}';">
+
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

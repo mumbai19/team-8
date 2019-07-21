@@ -9,6 +9,7 @@
                 <div class="row">
                     <div class="col-md-6">
                             <form action="{% url 'main:studentupdate' %}" method="post">
+                                    {% csrf_token %}
                                     <div class="form-group bmd-form-group">
                                             <label for="name" class="bmd-label-floating">Name</label>
                                             <input type="text" class="form-control" id="name" name="student_name">
@@ -33,7 +34,7 @@
                                             <label for="mentor" class="bmd-label-floating">Mentor</label>
                                             <input type="text" class="form-control" id="mentor" name="mentor">
                                     </div>
-                                    <input type="button" value="Update and Save" class="btn btn-primary btn-round" onclick="document.location.href='{% url 'main:students' %}';">
+                                    <input type="submit" value="Update and Save" class="btn btn-primary btn-round">
                             </form>
                     </div>
                 </div>

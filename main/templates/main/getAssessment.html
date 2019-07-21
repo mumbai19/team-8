@@ -12,20 +12,20 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-																		<th>Date</th>
-																		<th>Name</th>
-																		<th>Present/Absent</th>
-																		<th>Savings</th>
+																		<th>Student</th>
+																		<th>Assessment</th>
+                                    <th>Date</th>
+                                    <th>Score/Rating</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                    {% for i in attendance %}
+                                    {% for i in evaluate %}
                                     <tr class="studentDetails">
                                       <th scope="row">{{i.student_id}}</th>
-																			<td id="studentName1">{{i.attendance_date}}</td>
 																			<td id="studentName1">{{i.name}}</td>
-																			<td id="studentAddress1">{{i.present}}</td>
-																			<td id="studentAddress1">{{i.savings}}</td>
+																			<td id="studentName1">{{i.assessment_name}}</td>
+																			<td id="studentAddress1">{{i.assessment_date}}</td>
+																			<td id="studentAddress1">{{i.assessment_level}}</td>
                                     </tr>
                                     {% endfor %}
                             </tbody>
@@ -35,6 +35,10 @@
                       </table>
                    
                 </div>
+    </div>
+    <div style="text-align: center"> 
+        <input type="button" value="Add" class="btn btn-primary btn-round" onclick="document.location.href='{% url 'main:addassessment' %}';">
+
     </div>
 </div>
 </div>
