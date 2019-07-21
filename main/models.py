@@ -15,7 +15,7 @@ class Activity(models.Model):
     theme = models.CharField(max_length=255)
     activity_name = models.CharField(max_length=255)
     activity_description = models.CharField(max_length=255)
-    mentor = models.ForeignKey('Mentor', models.DO_NOTHING)
+    mentor_id = models.IntegerField()
 
     class Meta:
         managed = False
