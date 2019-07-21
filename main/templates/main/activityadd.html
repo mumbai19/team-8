@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                            <form action="{% url 'main:activityadd' %}" method="post">
+                            <form action="{% url 'main:activitySubmit' %}" method="post">
                                     {% csrf_token %}
                                     <div class="form-group bmd-form-group">
                                             <label for="Activity" class="bmd-label-floating">Activity</label>

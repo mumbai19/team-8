@@ -24,7 +24,7 @@
                                       <th scope="row">{{i.student_id}}</th>
 																			<td id="studentName1">{{i.name}}</td>
 																			<td id="studentName1">{{i.assessment_name}}</td>
-																			<td id="studentAddress1">{{i.assessment_date}}</td>
+																			<td id="studentAddress1">{{i.assesment_date}}</td>
 																			<td id="studentAddress1">{{i.assessment_level}}</td>
                                     </tr>
                                     {% endfor %}
@@ -37,7 +37,7 @@
                 </div>
     </div>
     <div style="text-align: center"> 
-        <input type="button" value="Add" class="btn btn-primary btn-round" onclick="document.location.href='{% url 'main:addassessment' %}';">
+        <input type="button" value="Add" class="btn btn-primary btn-round" onclick="document.location.href='{% url 'main:addtassessment' %}';">
 
     </div>
 </div>

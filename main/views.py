@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-from django.shortcuts import render, HttpResponse
-from .models import Mentor, Student,Activity
-from .forms import ActivityForm
-=======
 from django.shortcuts import render, HttpResponse, get_object_or_404
 from .models import Mentor, Student, Attendance, Evaluate, Saving, Activity
 from django.contrib.auth.models import User
->>>>>>> 298a84e3a376e3f281ae47fa81e3266f5bfaa506
 # Create your views here.
 
 # get index page
@@ -17,51 +11,6 @@ def index(request):
 def dashboard(request):
     return render(request, 'main/dashboard.html')
 
-# get mentor details
-# def mentorDetails(request):
-#     mentors = Mentor.objects.all()
-#     context = {
-#         'mentors': mentors
-#     }
-#     return render(request, 'main/index.html', context)
-#
-# # get student details
-# def studentDetails(request):
-#     students = Student.objects.all()
-#     context = {
-#         'students': students
-#     }
-#     return render(request, 'main/.html', context)
-#
-# def login_user(request):
-#     if request.method == "POST":
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         user = authenticate(username=username, password=password)
-#         if user is not None:
-#             if user.is_active:
-#                 login(request, user)
-#                 return render(request, 'main/.html', {'albums': {}})
-#             else:
-#                 return render(request, 'main/.html', {'error_message': 'Your account has been disabled'})
-#         else:
-#             return render(request, 'main/.html', {'error_message': 'Invalid login'})
-#     return render(request, 'main/.html')
-
-<<<<<<< HEAD
-def activitySubmit(request):
-    form = ActivityForm(request.POST or None)
-    if form.is_valid():
-        resource = form.save(commit=False)
-        activityID = form.cleaned_data['activity_id']
-        themeName = form.cleaned_data['theme']
-        activityName = form.cleaned_data['activity_name']
-        activityDescription = form.cleaned_data['activity_description']
-        mentorID = form.cleaned_data['mentor_id']
-        resource.save()
-        return render(request, 'main/ActAssessment.html', {'resource': resource})
-
-=======
 # get student details
 def studentDetails(request):
     students = Student.objects.all()
@@ -111,13 +60,13 @@ def getAssessments(request):
 
 def addAssessment(request):
     if request.method == "POST":
-        student_id = Student.objects.get(student_name=request.POST['student_name'])
+        student_id = Student.objects.get(student_name=request.POST['student_name']).student_id
         assess_name = request.POST['assess_name']
         assess_date = request.POST['assess_date']
         assess_level = request.POST['assess_level']
-        mentor = Mentor.objects.get(mentor_name=request.POST['mentor'])
+        mentor = Mentor.objects.get(mentor_name=request.POST['mentor']).mentor_id
 
-        evaluate = Evaluate(student_id=student_id, assess_name=assess_name, assess_date=assess_date, assess_level=assess_level, mentor_id=mentor)
+        evaluate = Evaluate(student_id=student_id, assessment_name=assess_name, assesment_date=assess_date, assessment_level=assess_level, mentor_id=mentor)
         evaluate.save()
         evaluate = Evaluate.objects.all()
 
@@ -148,6 +97,12 @@ def updateStudentInfo(request):
 def updateform(request):
     return render(request, 'main/studentUpdate.html')
 
+def addtAssessment(request):
+    return render(request, 'main/addAssessment.html')
+
+def activitytSubmit(request):
+    return render(request, 'main/activityadd.html')
+
 def activitySubmit(request):
     if request.method == "POST":
         act_name = request.POST['activity_name']
@@ -164,12 +119,8 @@ def activitySubmit(request):
         i.name = Mentor.objects.get(mentor_id = i.mentor_id).mentor_name
     return render(request, 'main/activityreport.html', {'activities': activities})
 
-<<<<<<< HEAD
 def getActivity(request):
     activities = Activity.objects.all()
     for i in activities:
         i.name = Mentor.objects.get(mentor_id = i.mentor_id).mentor_name
     return render(request, 'main/activityreport.html', {'activities': activities})
-=======
->>>>>>> 298a84e3a376e3f281ae47fa81e3266f5bfaa506
->>>>>>> 0ba27a104efa0140c5ea90bcf31c13879689bea1
