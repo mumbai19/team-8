@@ -6,10 +6,16 @@
     <!-- Essential JS UI widget -->
     <script src="https://cdn.syncfusion.com/17.2.0.28/js/web/ej.web.all.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
+            <br><br>
+           Enter Student Name: <input type="text" name="name"><span><button id="clickable">Add</button> <br><br>
+            <div id="start" style="display: none;">
+      <pre>       <button type="button" class="btn btn-warning">Attendance</button> <br><br></pre>
         <div id="container" style="width: 820px; height: 500px;"></div>
         <div class="container">
+                  <button type="button" class="btn btn-warning">Marks</button> <br><br>
         <table border="2" cellpadding="10px">
             <tr>
                   <th>Subject</th>
@@ -35,26 +41,8 @@
          </table>
       </div>
       <br><br><br><br>
-      <span style="background-color:blue">Marks</span>
       <div class="container">
-                  <table border="2" cellpadding="10px">
-                      <tr>
-                            <th>Date</th>
-                            <th>Subject1</th>
-                            <th>Subject1</th>
-                            <th>Subject1</th>
-                      </tr> 
-                      <tr bgcolor="cyan">
-                            <td>History</td>
-                            <td>18</td>
-                            <td>18</td>
-                            <td>18</td>
-                      </tr>       
-          
-                   </table>
-      </div>
-      <br><br><br><br>
-      <div class="container">
+                  <button type="button" class="btn btn-warning">Evaluation</button> <br><br>
                   <table border="2" cellpadding="10px">
                         <tr>
                               <th>Date</th>
@@ -64,36 +52,40 @@
                         </tr> 
                         <tr bgcolor="cyan">
                               <td>22/7/19</td>
-                              <td>2*</td>
-                              <td>0*</td>
-                              <td>1*</td>
+                              <td><img width="15" src="star.jpeg"><img width="15" src="star.jpeg"></td>
+                              <td></td>
+                              <td><img width="15" src="star.jpeg"></td>
                         </tr>
                               <tr bgcolor="violet">
                                     <td>25/7/19</td>
-                                    <td>3*</td>
+                                    <td><img width="15" src="star.jpeg"><img width="15" src="star.jpeg"><img width="15" src="star.jpeg"></td>
                                     <td></td>
-                                    <td>2*</td>
+                                    <td><img width="15" src="star.jpeg"><img width="15" src="star.jpeg"></td>
                               </tr>       
             
                   </table>
       </div>
+      <br><br><br><br>
+      <script>
+            $("#clickable").click(function(){
+                  $("#start").show();
+            })
+      </script>
         <script type="text/javascript" language="javascript ">
-
-            
-
+  
             var chartData = [
-      { month: 'Jan', sales: 35 },
-      { month: 'Feb', sales: 28 },
-      { month: 'Mar', sales: 34 },
-      { month: 'Apr', sales: 32 },
-      { month: 'May', sales: 40 },
-      { month: 'Jun', sales: 32 },
-      { month: 'Jul', sales: 35 },
-      { month: 'Aug', sales: 55 },
-      { month: 'Sep', sales: 38 },
-      { month: 'Oct', sales: 30 },
-      { month: 'Nov', sales: 25 },
-      { month: 'Dec', sales: 32 }];
+      { month: 'Jan', sales: 13 },
+      { month: 'Feb', sales: 96 },
+      { month: 'Mar', sales: 80 },
+      { month: 'Apr', sales: 78 },
+      { month: 'May', sales: 67 },
+      { month: 'Jun', sales: 68},
+      { month: 'Jul', sales: 87},
+      { month: 'Aug', sales: 69},
+      { month: 'Sep', sales: 80},
+      { month: 'Oct', sales: 76},
+      { month: 'Nov', sales: 55},
+      { month: 'Dec', sales: 67}];
 
       $("#container").ejChart({
             // ...     
@@ -129,5 +121,15 @@
            // ...
     });
       </script>
+            </div>
+      
+            <script>
+                        $(document).ready(function(){
+                              $("#start").click(function(event){
+                                    $("#start").show();
+                                //Your actions here
+                              });
+                            });                       
+            </script>
 </body>
 </html>
